@@ -95,8 +95,6 @@ Before using these modules, you need to set up AWS manually:
 3. **Enable Identity Center** - AWS Console → IAM Identity Center → Enable
 4. **Create Terraform State Backend** - S3 bucket + DynamoDB table
 
-See [PLAN.md](./PLAN.md) for detailed setup instructions.
-
 ## Modules
 
 | Module | Description |
