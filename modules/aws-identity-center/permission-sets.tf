@@ -34,7 +34,7 @@ resource "aws_ssoadmin_managed_policy_attachment" "this" {
     for item in flatten([
       for ps in var.permission_sets : [
         for policy_arn in lookup(ps, "managed_policy_arns", []) : {
-          key                = "${ps.name}-${policy_arn}"
+          key                 = "${ps.name}-${policy_arn}"
           permission_set_name = ps.name
           managed_policy_arn  = policy_arn
         }

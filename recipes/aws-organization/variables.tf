@@ -24,7 +24,7 @@ variable "accounts" {
   type = list(object({
     name                 = string
     email                = string
-    ou_name              = string  # Name of OU from organizational_units
+    ou_name              = string # Name of OU from organizational_units
     allow_billing_access = optional(bool, true)
     tags                 = optional(map(string), {})
   }))
@@ -39,9 +39,9 @@ variable "users" {
     given_name   = string
     family_name  = string
     display_name = string
-    assignments  = optional(list(object({
+    assignments = optional(list(object({
       permission_set = string
-      account_name   = string  # References account name from accounts list
+      account_name   = string # References account name from accounts list
     })), [])
   }))
   default = []

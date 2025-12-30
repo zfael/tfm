@@ -14,14 +14,14 @@ module "organization" {
     {
       name        = "DenyLeaveOrg"
       description = "Prevent accounts from leaving the organization"
-      content     = jsonencode({
+      content = jsonencode({
         Version = "2012-10-17"
         Statement = [
           {
-            Sid       = "DenyLeaveOrg"
-            Effect    = "Deny"
-            Action    = "organizations:LeaveOrganization"
-            Resource  = "*"
+            Sid      = "DenyLeaveOrg"
+            Effect   = "Deny"
+            Action   = "organizations:LeaveOrganization"
+            Resource = "*"
           }
         ]
       })

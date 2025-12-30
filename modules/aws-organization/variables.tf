@@ -13,7 +13,7 @@ variable "service_control_policies" {
   type = list(object({
     name        = string
     description = optional(string)
-    content     = string           # JSON policy document
+    content     = string                     # JSON policy document
     targets     = optional(list(string), []) # OU IDs or account IDs to attach
   }))
   default = []

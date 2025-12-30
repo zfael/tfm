@@ -6,9 +6,9 @@ variable "users" {
     given_name   = string
     family_name  = string
     display_name = string
-    assignments  = optional(list(object({
-      permission_set = string  # Must match a name in permission_sets
-      account_id     = string  # AWS account ID
+    assignments = optional(list(object({
+      permission_set = string # Must match a name in permission_sets
+      account_id     = string # AWS account ID
     })), [])
   }))
   default = []

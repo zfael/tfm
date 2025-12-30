@@ -114,3 +114,22 @@ See [PLAN.md](./PLAN.md) for detailed setup instructions.
 ## License
 
 MIT
+
+## Testing
+
+Modules include unit tests using Terraform's built-in test framework (requires TF 1.6+).
+
+```bash
+# Run tests for a specific module
+cd modules/aws-organization
+terraform init -backend=false
+terraform test
+
+# Run all tests
+for dir in modules/aws-organization modules/aws-accounts modules/aws-identity-center recipes/aws-organization; do
+  echo "Testing $dir:"
+  (cd $dir && terraform init -backend=false -input=false > /dev/null && terraform test)
+done
+```
+
+Tests use mock providers — no AWS credentials needed.

@@ -14,22 +14,22 @@ module "my_org" {
   # Member Accounts
   accounts = [
     {
-      name     = "dev"
-      email    = "myorg+aws-dev@gmail.com"
-      ou_name  = "Workloads"
-      tags     = { Environment = "dev" }
+      name    = "dev"
+      email   = "myorg+aws-dev@gmail.com"
+      ou_name = "Workloads"
+      tags    = { Environment = "dev" }
     },
     {
-      name     = "prod"
-      email    = "myorg+aws-prod@gmail.com"
-      ou_name  = "Workloads"
-      tags     = { Environment = "prod" }
+      name    = "prod"
+      email   = "myorg+aws-prod@gmail.com"
+      ou_name = "Workloads"
+      tags    = { Environment = "prod" }
     },
     {
-      name     = "security"
-      email    = "myorg+aws-security@gmail.com"
-      ou_name  = "Security"
-      tags     = { Environment = "security" }
+      name    = "security"
+      email   = "myorg+aws-security@gmail.com"
+      ou_name = "Security"
+      tags    = { Environment = "security" }
     }
   ]
 

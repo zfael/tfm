@@ -5,10 +5,10 @@ locals {
   user_assignments = flatten([
     for user in var.users : [
       for assignment in lookup(user, "assignments", []) : {
-        key             = "${user.username}-${assignment.permission_set}-${assignment.account_id}"
-        username        = user.username
-        permission_set  = assignment.permission_set
-        account_id      = assignment.account_id
+        key            = "${user.username}-${assignment.permission_set}-${assignment.account_id}"
+        username       = user.username
+        permission_set = assignment.permission_set
+        account_id     = assignment.account_id
       }
     ]
   ])
