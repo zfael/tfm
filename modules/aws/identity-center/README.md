@@ -6,7 +6,7 @@ Manages SSO users, permission sets, and account assignments.
 
 ```hcl
 module "identity_center" {
-  source = "github.com/zfael/tfm//modules/aws-identity-center"
+  source = "github.com/zfael/tfm//modules/aws/identity-center"
 
   permission_sets = [
     {

@@ -2,7 +2,7 @@
 # Batteries-included setup wiring org + accounts + identity-center
 
 module "organization" {
-  source = "../../modules/aws-organization"
+  source = "../../../modules/aws/organization"
 
   organizational_units     = var.organizational_units
   service_control_policies = var.service_control_policies
@@ -10,7 +10,7 @@ module "organization" {
 }
 
 module "accounts" {
-  source = "../../modules/aws-accounts"
+  source = "../../../modules/aws/accounts"
 
   accounts = [
     for account in var.accounts : {
@@ -28,7 +28,7 @@ module "accounts" {
 }
 
 module "identity_center" {
-  source = "../../modules/aws-identity-center"
+  source = "../../../modules/aws/identity-center"
 
   users = [
     for user in var.users : {

@@ -6,7 +6,7 @@ Creates Organizational Units (OUs) and optional Service Control Policies (SCPs).
 
 ```hcl
 module "organization" {
-  source = "github.com/zfael/tfm//modules/aws-organization"
+  source = "github.com/zfael/tfm//modules/aws/organization"
 
   organizational_units = [
     { name = "Workloads" },
