@@ -6,7 +6,7 @@ Batteries-included setup that wires together organization, accounts, and Identit
 
 ```hcl
 module "my_org" {
-  source = "github.com/zfael/tfm//recipes/aws-organization"
+  source = "github.com/zfael/tfm//recipes/aws/organization"
 
   # Organizational Units
   organizational_units = [

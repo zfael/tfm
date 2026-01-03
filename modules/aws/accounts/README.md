@@ -6,7 +6,7 @@ Creates member accounts in AWS Organizations.
 
 ```hcl
 module "accounts" {
-  source = "github.com/zfael/tfm//modules/aws-accounts"
+  source = "github.com/zfael/tfm//modules/aws/accounts"
 
   accounts = [
     {
