@@ -63,7 +63,7 @@ resource "aws_iam_role_policy_attachment" "execution_ecr" {
 }
 
 resource "aws_iam_role_policy" "execution_ssm" {
-  count = length(var.secrets) > 0 ? 1 : 0
+  count = var.secrets_ssm_prefix != null || length(var.secrets) > 0 ? 1 : 0
   name  = "ssm-access"
   role  = aws_iam_role.execution.id
 
@@ -72,7 +72,7 @@ resource "aws_iam_role_policy" "execution_ssm" {
     Statement = [{
       Effect   = "Allow"
       Action   = ["ssm:GetParameters", "ssm:GetParameter"]
-      Resource = [for k, v in var.secrets : v]
+      Resource = var.secrets_ssm_prefix != null ? [var.secrets_ssm_prefix] : [for k, v in var.secrets : v]
     }]
   })
 }

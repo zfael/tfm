@@ -91,6 +91,12 @@ variable "secrets" {
   default     = {}
 }
 
+variable "secrets_ssm_prefix" {
+  description = "SSM parameter prefix for execution role access (e.g. arn:aws:ssm:region:account:parameter/prefix/*)"
+  type        = string
+  default     = null
+}
+
 variable "log_retention_days" {
   description = "CloudWatch log retention"
   type        = number
