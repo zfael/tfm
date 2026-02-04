@@ -17,11 +17,11 @@ locals {
 module "ecr" {
   source = "../../../modules/aws/ecr"
 
-  name                   = var.name
-  image_tag_mutability   = "MUTABLE"
-  force_delete           = var.ecr_force_delete
-  lifecycle_policy_count = var.ecr_lifecycle_count
-  tags                   = var.tags
+  name                 = var.name
+  image_tag_mutability = "MUTABLE"
+  force_delete         = var.ecr_force_delete
+  max_image_count      = var.ecr_lifecycle_count
+  tags                 = var.tags
 }
 
 # -----------------------------------------------------------------------------
