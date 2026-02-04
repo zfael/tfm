@@ -17,7 +17,7 @@
 # Creates: /my-app/db/url, /my-app/db/password, /my-app/config/key
 
 module "params" {
-  source   = "../../modules/aws/ssm"
+  source   = "../../../modules/aws/ssm"
   for_each = var.parameters
 
   name       = "/${var.prefix}/${each.key}"
