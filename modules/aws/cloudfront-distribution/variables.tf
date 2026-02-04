@@ -3,6 +3,12 @@ variable "origin_domain_name" {
   type        = string
 }
 
+variable "s3_bucket_arn" {
+  description = "ARN of the S3 bucket (required for OAC bucket policy)"
+  type        = string
+  default     = null
+}
+
 variable "origin_id" {
   description = "Unique identifier for the origin"
   type        = string
