@@ -19,9 +19,8 @@ resource "supabase_project" "main" {
   database_password = var.database_password
   region            = var.region
 
-  # Instance size determines compute resources
-  # Free tier: only "micro" is available
-  # Pro tier: "small", "medium", "large", "xlarge", "2xlarge", "4xlarge"
+  # Instance size - only set for Pro tier (free tier can't specify)
+  # null = free tier, "small"/"medium"/etc = Pro tier
   instance_size = var.instance_size
 
   lifecycle {
