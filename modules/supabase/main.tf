@@ -22,7 +22,7 @@ resource "supabase_project" "main" {
   # Instance size determines compute resources
   # Free tier: only "micro" is available
   # Pro tier: "small", "medium", "large", "xlarge", "2xlarge", "4xlarge"
-  desired_instance_size = var.instance_size
+  instance_size = var.instance_size
 
   lifecycle {
     ignore_changes = [database_password]
