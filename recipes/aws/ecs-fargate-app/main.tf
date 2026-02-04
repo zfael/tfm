@@ -150,14 +150,16 @@ module "alb" {
 module "target_group" {
   source = "../../../modules/aws/alb-target-group"
 
-  name                 = var.name
-  port                 = var.container_port
-  protocol             = "HTTP"
-  vpc_id               = var.vpc_id
-  target_type          = "ip"
-  health_check_path    = var.health_check_path
-  health_check_matcher = var.health_check_matcher
-  tags                 = var.tags
+  name        = var.name
+  port        = var.container_port
+  protocol    = "HTTP"
+  vpc_id      = var.vpc_id
+  target_type = "ip"
+  health_check = {
+    path    = var.health_check_path
+    matcher = var.health_check_matcher
+  }
+  tags = var.tags
 }
 
 # HTTPS Listener
