@@ -38,13 +38,12 @@ variable "region" {
 }
 
 variable "instance_size" {
-  description = "Compute instance size. Free tier: 'micro' only. Pro tier: 'small', 'medium', 'large', 'xlarge', '2xlarge', '4xlarge'"
+  description = "Compute instance size. Free tier: omit or set to null. Pro tier: 'small', 'medium', 'large', 'xlarge', '2xlarge', '4xlarge'"
   type        = string
-  default     = "micro"
+  default     = null  # null = free tier (can't specify size)
 
   validation {
-    condition = contains([
-      "micro",    # Free tier (shared CPU, 1GB RAM)
+    condition = var.instance_size == null || contains([
       "small",    # Pro tier ($25/mo compute)
       "medium",   # Pro tier
       "large",    # Pro tier
@@ -52,6 +51,6 @@ variable "instance_size" {
       "2xlarge",  # Pro tier
       "4xlarge"   # Pro tier
     ], var.instance_size)
-    error_message = "Invalid instance size. Use 'micro' for free tier, or 'small'/'medium'/'large'/'xlarge'/'2xlarge'/'4xlarge' for Pro tier."
+    error_message = "Invalid instance size. Use null for free tier, or 'small'/'medium'/'large'/'xlarge'/'2xlarge'/'4xlarge' for Pro tier."
   }
 }
