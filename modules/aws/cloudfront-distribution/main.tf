@@ -79,7 +79,7 @@ data "aws_iam_policy_document" "s3_bucket_policy" {
     sid       = "AllowCloudFrontServicePrincipal"
     effect    = "Allow"
     actions   = ["s3:GetObject"]
-    resources = ["arn:aws:s3:::*/*"]
+    resources = ["${var.s3_bucket_arn}/*"]
 
     principals {
       type        = "Service"
