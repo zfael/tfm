@@ -23,7 +23,7 @@ variable "region" {
     condition = contains([
       "us-east-1",
       "us-east-2",
-      "us-west-1", 
+      "us-west-1",
       "eu-west-1",
       "eu-west-2",
       "eu-central-1",
@@ -40,16 +40,16 @@ variable "region" {
 variable "instance_size" {
   description = "Compute instance size. Free tier: omit or set to null. Pro tier: 'small', 'medium', 'large', 'xlarge', '2xlarge', '4xlarge'"
   type        = string
-  default     = null  # null = free tier (can't specify size)
+  default     = null # null = free tier (can't specify size)
 
   validation {
     condition = var.instance_size == null || contains([
-      "small",    # Pro tier ($25/mo compute)
-      "medium",   # Pro tier
-      "large",    # Pro tier
-      "xlarge",   # Pro tier
-      "2xlarge",  # Pro tier
-      "4xlarge"   # Pro tier
+      "small",   # Pro tier ($25/mo compute)
+      "medium",  # Pro tier
+      "large",   # Pro tier
+      "xlarge",  # Pro tier
+      "2xlarge", # Pro tier
+      "4xlarge"  # Pro tier
     ], var.instance_size)
     error_message = "Invalid instance size. Use null for free tier, or 'small'/'medium'/'large'/'xlarge'/'2xlarge'/'4xlarge' for Pro tier."
   }
