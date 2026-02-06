@@ -23,7 +23,7 @@ variable "timeout" {
 variable "architectures" {
   description = "CPU architecture"
   type        = list(string)
-  default     = ["x86_64"]
+  default     = ["arm64"]
 }
 
 variable "environment" {
